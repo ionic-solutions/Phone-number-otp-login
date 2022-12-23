@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Phone Auth
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+  <ion-content class="ion-no-padding">
+    <div id="sign-in-button"></div>
+  
+    <div class="main">
+      <ion-card no-margin > 
+        <ion-card-content>
+          <ion-row class="row">
+            <div class="fire-logo">
+              <img src="../../assets/touchicon-180.png" class="img-logo"  >
+              <ion-text class="ion-padding">
+                <h2 class="ion-no-margin ion-margin-vertical ion-text-center">Welcome to Ionic 6 Firebase Phone Auth</h2>
+              </ion-text>
+            </div>
+          </ion-row>
+          <ion-grid class="phoneAuthGrid">
+            <ion-row>
+              <ion-col size="4">
+                <ion-select class="phoneCountry" value="brown" okText="Okay" cancelText="Dismiss"
+                  (ionChange)="countryCodeChange($event)" [value]="CountryCode" placeholder="+92">
+                  <ion-select-option *ngFor="let country of CountryJson" value={{country.dial_code}}>
+                    {{country.dial_code + ' ' + country.name}}</ion-select-option>
+                </ion-select>
+              </ion-col>
+              <ion-col size="8">
+                <ion-input clearInput type="test" placeholder="Your Contact Number" [(ngModel)]="PhoneNo"
+                  class="input ion-padding-horizontal" clear-input="true"></ion-input>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-button expand="block" (click)="signinWithPhoneNumber($event)" color="undefined"
+                  class="btn-transition">
+                  Signin with Phone number</ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-content>
+      </ion-card>
+    </div>
+</ion-content>

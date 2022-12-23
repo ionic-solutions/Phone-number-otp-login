@@ -1,0 +1,7 @@
+{
+  "name": "OTP",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
